@@ -16,6 +16,9 @@ public class MedicalRecordDao {
     
     private static final Map<Integer, MedicalRecord> medicalRecords = new HashMap<>();
     
+    
+    
+    
     // Create
     public static void addMedicalRecord(MedicalRecord medicalRecord) {
         validateMedicalRecord(medicalRecord);

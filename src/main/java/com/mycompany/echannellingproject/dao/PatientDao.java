@@ -20,6 +20,18 @@ public class PatientDao extends PersonDao {
 
     private static Map<Integer, Patient> patients = new HashMap<>();
     private static int nextId = 1;
+    
+    // Static block for adding example Patient objects
+    static {
+        Patient patient1 = new Patient(1,"Heart Disease", "Stable", "John Doe", "1234567890", "john@example.com", "123 Street, City");
+        Patient patient2 = new Patient(2,"Asthma", "Improving", "Alice Smith", "9876543210", "alice@example.com", "456 Avenue, Town");
+        Patient patient3 = new Patient(3,"Diabetes", "Critical", "Bob Johnson", "5678901234", "bob@example.com", "789 Road, Village");
+        
+        addPatient(patient1);
+        addPatient(patient2);
+        addPatient(patient3);
+    }
+
 
     // Create
     public static int addPatient(Patient patient) {

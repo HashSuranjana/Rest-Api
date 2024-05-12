@@ -20,7 +20,19 @@ public class DoctorDao extends PersonDao {
 
     private static Map<Integer, Doctor> doctors = new HashMap<>();
     private static int nextId = 1;
+    
+    static {
+    
+        Doctor doctor1 = new Doctor(12,"Dr. John Doe","1234567890","john@example.com","123 Street, London","Cardiologist","12344"  );
+        Doctor doctor2 = new Doctor(13,"Dr. Alberto","13456782901","Alberto@example.com","134 Street, NewYork","Nuerologist","76543"  );
+        Doctor doctor3 = new Doctor(14,"Dr. Tom Jackson","2345678901","TomJac@example.com","256 Street, Crossby","Phycologist","90890"  );
 
+        addDoctor(doctor1);
+        addDoctor(doctor2);
+        addDoctor(doctor3);
+    
+    }
+        
     // Create
     public static int addDoctor(Doctor doctor) {
         validateDoctor(doctor);

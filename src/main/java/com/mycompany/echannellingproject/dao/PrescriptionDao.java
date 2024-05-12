@@ -18,6 +18,16 @@ public class PrescriptionDao {
     
     private static final Map<Integer, Prescription> prescriptions = new HashMap<>();
     private static int nextId = 1;
+    
+    static {
+        Prescription prescription1 = new Prescription(123,"Medicine A", "10mg", "Take twice daily", "1 week");
+        Prescription prescription2 = new Prescription(456,"Medicine B", "5mg", "Take once daily after meal", "2 weeks");
+        Prescription prescription3 = new Prescription(789,"Medicine C", "20mg", "Take as needed", "3 days");
+        
+        addPrescription(prescription1);
+        addPrescription(prescription2);
+        addPrescription(prescription3);
+    }
 
     // Create
     public static int addPrescription(Prescription prescription) {
