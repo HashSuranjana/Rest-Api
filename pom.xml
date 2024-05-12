@@ -18,11 +18,15 @@
     
     <dependencies>
         <dependency>
+            <groupId>org.glassfish.jersey.inject</groupId>
+            <artifactId>jersey-hk2</artifactId>
+            <version>2.32</version>
+        </dependency>
+        <dependency>
             <groupId>org.glassfish.jersey.containers</groupId>
             <artifactId>jersey-container-servlet</artifactId>
             <version>2.32</version>
         </dependency>
-        
         <dependency>
             <groupId>org.glassfish.jersey.media</groupId>
             <artifactId>jersey-media-json-jackson</artifactId>
@@ -34,16 +38,13 @@
             <artifactId>slf4j-api</artifactId>
             <version>1.7.32</version> <!-- Adjust the version as needed -->
         </dependency>
-        
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
             <version>1.2.6</version> <!-- Adjust the version as needed -->
         </dependency>
-
     </dependencies>
-    
-     <build>
+    <build>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -64,4 +65,5 @@
             </plugin>
         </plugins>
     </build>
+
 </project>

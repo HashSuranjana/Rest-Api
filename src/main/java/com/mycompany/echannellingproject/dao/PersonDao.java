@@ -18,6 +18,18 @@ public class PersonDao {
     
     private static Map<Integer, Person> persons = new HashMap<>();
     private static int nextId = 1;
+    
+    static {
+        // Example Person objects
+        Person person1 = new Person(1,"John Doe", "1234567890", "john@example.com", "123 Street, City");
+        Person person2 = new Person(2,"Alice Smith", "9876543210", "alice@example.com", "456 Avenue, Town");
+        Person person3 = new Person(3,"Bob Johnson", "5678901234", "bob@example.com", "789 Road, Village");
+
+        // Adding persons to the map
+        addPerson(person1);
+        addPerson(person2);
+        addPerson(person3);
+    }
 
     // Create
     public static int addPerson(Person person) {
