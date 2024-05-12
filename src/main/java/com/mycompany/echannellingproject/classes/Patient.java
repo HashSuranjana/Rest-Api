@@ -15,7 +15,7 @@ public class Patient extends Person {
 
     public Patient() {}
     
-    public Patient(String medical_history, String current_health, int person_id, String person_name, String person_phoneNumber, String person_email, String person_address) {
+    public Patient(int person_id, String person_name, String person_phoneNumber, String person_email, String person_address,String medical_history,String current_health) {
         super(person_id, person_name, person_phoneNumber, person_email, person_address);
         this.medical_history = medical_history;
         this.current_health = current_health;
