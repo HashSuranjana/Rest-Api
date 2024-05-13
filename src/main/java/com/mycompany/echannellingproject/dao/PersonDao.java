@@ -16,14 +16,14 @@ import java.util.Map;
  */
 public class PersonDao {
     
-    private static Map<Integer, Person> persons = new HashMap<>();
+    private static final Map<Integer, Person> persons = new HashMap<>();
     private static int nextId = 1;
     
     static {
         // Example Person objects
-        Person person1 = new Person(1,"John Doe", "1234567890", "john@example.com", "123 Street, City");
-        Person person2 = new Person(2,"Alice Smith", "9876543210", "alice@example.com", "456 Avenue, Town");
-        Person person3 = new Person(3,"Bob Johnson", "5678901234", "bob@example.com", "789 Road, Village");
+        Person person1 = new Person(154,"John Doe", "1234567890", "johnD@gmail.com", "123 Street, Colombo");
+        Person person2 = new Person(212,"Alice Smith", "9876543210", "aliceS@hotmail.com", "456 Avenue, Kandy");
+        Person person3 = new Person(311,"Bob Johnson", "5678901234", "bobJs@email.com", "789 Road, Crossby");
 
         // Adding persons to the map
         addPerson(person1);
@@ -69,9 +69,9 @@ public class PersonDao {
     // Exception Handling and Validation
     public static void validatePerson(Person person) {
         if (person.getPerson_name()== null || person.getPerson_name().isEmpty()) {
-            throw new IllegalArgumentException("Person name cannot be empty.");
+            throw new IllegalArgumentException("Person name can't be empty.");
         }
-        // Similarly, validate other fields like phoneNumber, email, address
+        
     }
     
 }

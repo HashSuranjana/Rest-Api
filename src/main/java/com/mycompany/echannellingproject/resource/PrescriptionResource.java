@@ -19,17 +19,9 @@ import java.util.List;
 @Path("/prescriptions")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
+
 public class PrescriptionResource {
     
-    // Create a new prescription
-    @POST
-    public Response addPrescription(Prescription prescription, @Context UriInfo uriInfo) {
-        int id = PrescriptionDao.addPrescription(prescription);
-        UriBuilder uriBuilder = uriInfo.getAbsolutePathBuilder();
-        uriBuilder.path(Integer.toString(id));
-        return Response.created(uriBuilder.build()).build();
-    }
-
     // Get all prescriptions
     @GET
     public List<Prescription> getAllPrescriptions() {
@@ -47,6 +39,16 @@ public class PrescriptionResource {
             return Response.status(Response.Status.NOT_FOUND).build();
         }
     }
+    
+    // Create a new prescription
+    @POST
+    public Response addPrescription(Prescription prescription, @Context UriInfo uriInfo) {
+        int id = PrescriptionDao.addPrescription(prescription);
+        UriBuilder uriBuilder = uriInfo.getAbsolutePathBuilder();
+        uriBuilder.path(Integer.toString(id));
+        return Response.created(uriBuilder.build()).build();
+    }
+    
 
     // Update a prescription
     @PUT

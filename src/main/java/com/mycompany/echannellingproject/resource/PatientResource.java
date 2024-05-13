@@ -21,15 +21,6 @@ import java.util.List;
 @Consumes(MediaType.APPLICATION_JSON)
 
 public class PatientResource {
-    
-    // Create a new patient
-    @POST
-    public Response addPatient(Patient patient, @Context UriInfo uriInfo) {
-        int id = PatientDao.addPatient(patient);
-        UriBuilder uriBuilder = uriInfo.getAbsolutePathBuilder();
-        uriBuilder.path(Integer.toString(id));
-        return Response.created(uriBuilder.build()).build();
-    }
 
     // Get all patients
     @GET
@@ -48,6 +39,17 @@ public class PatientResource {
             return Response.status(Response.Status.NOT_FOUND).build();
         }
     }
+    
+    // Create a new patient
+    @POST
+    public Response addPatient(Patient patient, @Context UriInfo uriInfo) {
+        int id = PatientDao.addPatient(patient);
+        UriBuilder uriBuilder = uriInfo.getAbsolutePathBuilder();
+        uriBuilder.path(Integer.toString(id));
+        return Response.created(uriBuilder.build()).build();
+    }
+    
+    
 
     // Update a patient
     @PUT

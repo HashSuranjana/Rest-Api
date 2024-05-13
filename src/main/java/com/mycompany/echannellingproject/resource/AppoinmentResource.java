@@ -22,6 +22,7 @@ import java.util.List;
 @Path("/appointments")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
+
 public class AppoinmentResource {
 
     private final AppoinmentDao appoinmentDao = new AppoinmentDao();

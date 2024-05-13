@@ -58,7 +58,7 @@ public class BillingDao {
         if (billingRecord.getDate() == null) {
             throw new IllegalArgumentException("Date cannot be null.");
         }
-        // Additional validations can be added as needed
+        
     }
     
 }

@@ -4,14 +4,16 @@
  */
 package com.mycompany.echannellingproject.resource;
 
-/**
- *
- * @author hasit
- */
 import javax.ws.rs.*;
 import javax.ws.rs.core.*;
 import com.mycompany.echannellingproject.dao.MedicalRecordDao;
 import com.mycompany.echannellingproject.classes.MedicalRecord;
+
+/**
+ *
+ * @author hasit
+ */
+
 
 @Path("/medical-records")
 @Produces(MediaType.APPLICATION_JSON)

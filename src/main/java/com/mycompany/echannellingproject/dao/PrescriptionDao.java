@@ -20,9 +20,9 @@ public class PrescriptionDao {
     private static int nextId = 1;
     
     static {
-        Prescription prescription1 = new Prescription(123,"Medicine A", "10mg", "Take twice daily", "1 week");
-        Prescription prescription2 = new Prescription(456,"Medicine B", "5mg", "Take once daily after meal", "2 weeks");
-        Prescription prescription3 = new Prescription(789,"Medicine C", "20mg", "Take as needed", "3 days");
+        Prescription prescription1 = new Prescription(123,"Medicine A", "10mg", "Take twice daily", "5 days");
+        Prescription prescription2 = new Prescription(456,"Medicine B", "5mg", "Take once daily after lunch", "2 weeks");
+        Prescription prescription3 = new Prescription(789,"Medicine C", "16mg", "Take as needed", "3 days");
         
         addPrescription(prescription1);
         addPrescription(prescription2);
@@ -73,7 +73,7 @@ public class PrescriptionDao {
         if (prescription.getMedication()== null || prescription.getMedication().isEmpty()) {
             throw new IllegalArgumentException("Medication name cannot be empty.");
         }
-        // Similarly, perform validation for other fields like dosage, instructions, duration
+        
     }
     
 }

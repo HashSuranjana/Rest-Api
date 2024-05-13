@@ -20,16 +20,7 @@ import java.util.List;
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 public class DoctorResource {
-    
-    // Create a new doctor
-    @POST
-    public Response addDoctor(Doctor doctor, @Context UriInfo uriInfo) {
-        int id = DoctorDao.addDoctor(doctor);
-        UriBuilder uriBuilder = uriInfo.getAbsolutePathBuilder();
-        uriBuilder.path(Integer.toString(id));
-        return Response.created(uriBuilder.build()).build();
-    }
-
+ 
     // Get all doctors
     @GET
     public List<Doctor> getAllDoctors() {
@@ -47,6 +38,17 @@ public class DoctorResource {
             return Response.status(Response.Status.NOT_FOUND).build();
         }
     }
+    
+    // Create a new doctor
+    @POST
+    public Response addDoctor(Doctor doctor, @Context UriInfo uriInfo) {
+        int id = DoctorDao.addDoctor(doctor);
+        UriBuilder uriBuilder = uriInfo.getAbsolutePathBuilder();
+        uriBuilder.path(Integer.toString(id));
+        return Response.created(uriBuilder.build()).build();
+    }
+    
+    
 
     // Update a doctor
     @PUT
@@ -66,7 +68,7 @@ public class DoctorResource {
     public Response deleteDoctor(@PathParam("id") int id) {
         try {
             DoctorDao.deleteDoctor(id);
-            return Response.noContent().build();
+            return Response.ok().build();
         } catch (IllegalArgumentException ex) {
             return Response.status(Response.Status.NOT_FOUND).entity(ex.getMessage()).build();
         }
